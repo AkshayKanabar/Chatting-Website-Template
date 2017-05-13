@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>chat.io</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <script>
+      function validate(form){
+        var flag = true;
+        var username = form.username.value;
+        var password = form.password.value;
+        var firstname = form.firstname.value;
+        var lastname = form.lastname.value;
+        var email = form.email.value;
+        var gender = form.gender.value;
+        var age = form.age.value;
+        var repassword = form.repassword.value;
+        if(username.length === 0){
+          form.username.style.borderColor = "#b71c1c";
+          document.getElementById("ErrorUsername").innerHTML = "Enter Username";
+          flag = false;
+        }
+        if(password.length === 0){
+          form.password.style.borderColor = "#b71c1c";
+          document.getElementById("ErrorPassword").innerHTML = "Enter Password";
+          flag = false;
+        }
+        if(firstname.length === 0 || lastname.length === 0){
+          form.firstname.style.borderColor = "#b71c1c";
+          form.lastname.style.borderColor = "#b71c1c";
+          document.getElementById("ErrorName").innerHTML = "Enter Full Name";
+          flag = false;
+        }
+        if(email.length === 0){
+          form.email.style.borderColor = "#b71c1c";
+          document.getElementById("ErrorEmail").innerHTML = "Enter Email";
+          flag = false;
+        }
+        else if(!validateEmail(email)){
+          document.getElementById("ErrorEmail").innerHTML = "Enter Valid Email";
+          flag = false;
+        }
+        if(!gender){
+          document.getElementById("ErrorGender").innerHTML = "No Gender Selected";
+          flag = false;
+        }
+        if(age.length === 0){
+          form.age.style.borderColor = "#b71c1c";
+          document.getElementById("ErrorAge").innerHTML = "Enter Age";
+          flag = false;
+        }
+        if(repassword.length === 0){
+          form.repassword.style.borderColor = "#b71c1c";
+          document.getElementById("ErrorRepassword").innerHTML = "Re-Enter Password";
+          flag = false;
+        }
+        else if(password != repassword){
+          form.repassword.style.borderColor = "#b71c1c";
+          document.getElementById("ErrorRepassword").innerHTML = "Password doesn't match";
+          flag = false;
+        }
+
+        return flag;
+      }
+      function validateEmail(mail) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(mail);
+      }
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <center>
+      <div id="card" class="card-panel z-depth-2 teal" style="width: 650px; margin-top: 10px; margin-bottom: 10px; height: 800px;">
+        <div class="logo">Chat.io</div>
+        <div class="form-property">
+          <form method="post" action="index.html" onsubmit="return validate(this);">
+            <input name="firstname" id="input-property" type="text" accept="text/plain" placeholder="First Name" style="width: 45%; float: left; margin: 5px 5px;">
+            <input name="lastname" id="input-property" type="text" accept="text/plain" placeholder="Last Name" style="width: 45%; float: left; margin: 5px 5px;">
+            <sub><p id="ErrorName" style="color: #b71c1c; font-size:15px; float: right;"></p></sub>
+            <input name="email" id="input-property" type="text" accept="text/plain" placeholder="Email Address" style="width: 100%; margin: 5px 5px;">
+            <sub><p id="ErrorEmail" style="color: #b71c1c; font-size:15px; float: right;"></p></sub>
+            <input name="gender" class="with-gap" type="radio" id="test1" /><label for="test1" style="margin-top: 15px; margin-left:15px; font-size: 20px; color: #eeeeee;">Male</label>
+            <input name="gender" class="with-gap" type="radio" id="test2" /><label for="test2" style="margin-top: 15px; margin-left:15px; font-size: 20px; color: #eeeeee;">Female</label>
+            <br><br><sub><p id="ErrorGender" style="color: #b71c1c; font-size:15px; float: right;"></p></sub>
+            <input name="age" id="input-property" type="number" min="0" accept="text/plain" placeholder="Age" style="width: 100%; margin: 5px 5px;">
+            <sub><p id="ErrorAge" style="color: #b71c1c; font-size:15px; float: right;"></p></sub>
+            <input name="username" id="input-property" type="text" accept="text/plain" placeholder="Username" style="width: 100%; margin: 5px 5px;">
+            <sub><p id="ErrorUsername" style="color: #b71c1c; font-size:15px; float: right;"></p></sub>
+            <input name="password" id="input-property" type="password" accept="text/plain" placeholder="Password" style="width: 100%; margin: 5px 5px;">
+            <sub><p id="ErrorPassword" style="color: #b71c1c; font-size:15px; float: right;"></p></sub>
+            <input name="repassword" id="input-property" type="password" accept="text/plain" placeholder="Retype Password" style="width: 100%; margin: 5px 5px;">
+            <sub><p id="ErrorRepassword" style="color: #b71c1c; font-size:15px; float: right;"></p></sub>
+           <br/><br/><center><button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i></button> 
+          </form>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>

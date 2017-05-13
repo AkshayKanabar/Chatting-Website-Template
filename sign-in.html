@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>chat.io</title>
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/style.css">
+    <script>
+      function validate(form){
+        var flag = true;
+        var username = form.username.value;
+        var password = form.password.value;
+        if(username.length === 0){
+          form.username.style.borderColor = "#b71c1c";
+          document.getElementById("ErrorUsername").innerHTML = "Enter Username";
+          flag = false;
+        }
+        if(password.length === 0){
+          form.password.style.borderColor = "#b71c1c";
+          document.getElementById("ErrorPassword").innerHTML = "Enter Password";
+          flag = false;
+        }
+        return flag;
+      }
+    </script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <center>
+      <div id="card" class="card-panel z-depth-2 teal">
+        <div class="logo">Chat.io</div>
+        <div class="form-property">
+          <form method="post" action="index.html" onsubmit="return validate(this);">
+            <input name="username" id="input-property" type="text" accept="text/plain" placeholder="Username / Email address">
+            <sub><p id="ErrorUsername" style="color: #b71c1c; font-size:15px; float: right;"></p></sub>
+            <input name="password" id="input-property" type="password" accept="text/plain" placeholder="Password">
+            <sub><p id="ErrorPassword" style="color: #b71c1c; font-size:15px; float: right;"></p></sub><br/><br/>
+            <center><button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i></button> 
+         </form>
+        </div>
+        <fieldset class="border">
+          <legend>OR</legend>
+          <a href="forget-password.html">Forget Password ?<a>
+        </fieldset>
+      </div>
+    </center>
+  </body>
+</html>

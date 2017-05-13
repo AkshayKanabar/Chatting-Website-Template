@@ -1,0 +1,139 @@
+@font-face {
+    font-family: Orbitron;
+    src: url(font/Orbitron/Orbitron-Regular);
+}
+
+#nav-button{
+	margin-right: 20px;
+	float: right;
+}
+
+#launch-app{
+	margin-left: 900px;
+	margin-top: 20px;
+}
+
+#content{
+	margin: auto;
+}
+
+#card{
+  width: 450px;
+  height: 550px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#input-property{
+  padding: 5px 5px;
+  margin: auto;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+#submit-form-property{
+  padding: inherit;
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+}
+
+#feature-1{
+  height: inherit;
+  text-align: center;
+}
+
+#feature-1 i{
+  color: #00796b;
+  margin-top: 10px;
+}
+
+#feature-1 i:hover{
+  color: #00796b;
+  font-size: 100px;
+  margin-top: 10px;
+}
+
+#footer-icons i{
+  margin-top: 20px;
+  margin-left: 35px;
+  float: left;
+  color: #00796b;
+  font-size: 50px;
+}
+
+#footer-icons i:hover{
+  color: #00bfa5;
+}
+
+.profile{
+  border: 5px solid #00796b;
+  border-radius: 30px;
+}
+
+.clear-fix{
+  clear: both;
+}
+
+.same-line-input{
+  float: left;
+  width: 50%;
+}
+
+.form-property{
+  text-align: left;
+  margin-top: 20px;
+  color: white;
+  padding: inherit;
+}
+
+.brand-logo{
+	font-family: Orbitron;
+}
+
+.main-content{
+	height: 500px;
+}
+
+.footer{
+	margin-bottom: 10px;
+}
+
+.logo{
+	font-size: 50px;
+	font-family: Orbitron;
+	color: white;
+	border: 5px solid white;
+	width: 220px;
+	padding: 5px 10px;
+}
+.tag-line{
+	margin-left: 900px;
+	margin-top: 20px;
+	font-size: 25px;
+	font-family: Orbitron;
+	color: white;
+}
+
+center a{
+  color: inherit;
+}
+
+fieldset a{
+  color: white;
+  border: none;
+}
+
+fieldset{
+  border: none;
+  border-top: 1px solid white;
+  margin-top: 2px;
+}
+
+fieldset legend{
+  padding: 5px;
+  text-align: center;
+  color: white;
+}
